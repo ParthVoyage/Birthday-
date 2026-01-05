@@ -39,14 +39,15 @@
       border-radius: 10px;
       background: #ff4081;
       color: white;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Music -->
-  <audio autoplay loop>
+  <!-- Music (no autoplay) -->
+  <audio id="music" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
 
@@ -54,7 +55,7 @@
     <h1>🎂 Happy Birthday 🎉</h1>
 
     <!-- CHANGE NAME HERE -->
-    <h2>Dear Rahul 💖</h2>
+    <h2>Dear RIDDHIMA JI 💖</h2>
 
     <!-- CHANGE PHOTO LINK HERE -->
     <img src="https://i.imgur.com/0y8Ftya.jpeg" alt="Birthday Photo">
@@ -64,19 +65,24 @@
   </div>
 
   <script>
+    const music = document.getElementById("music");
+
     function celebrate() {
+      music.play(); // ✅ works on mobile
+
       confetti({
         particleCount: 200,
         spread: 100,
         origin: { y: 0.6 }
       });
-      alert("🎉 Wishing you lots of happiness & success! 🎉");
+
+      alert("🎉 Wishing you lots of happiness & success! 🎉\nMay all your dreams come true !!!\nEnjoy your day without any regrets 🤗");
     }
 
-    // Auto confetti on load
+    // Light confetti on load (no sound)
     setTimeout(() => {
       confetti({
-        particleCount: 150,
+        particleCount: 120,
         spread: 120
       });
     }, 1000);
