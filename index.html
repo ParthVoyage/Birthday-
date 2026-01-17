@@ -109,7 +109,8 @@
 
 <body>
 
-  <audio id="music" autoplay loop>
+  <!-- Background music (NO autoplay) -->
+  <audio id="music" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8c5f9a7c3c.mp3" type="audio/mpeg">
   </audio>
 
@@ -120,10 +121,10 @@
 
     <div class="age" id="ageCounter"></div>
 
-    <button onclick="surprise()">🎁 Purple Surprise</button>
-    <button onclick="specialMessage()">💌 Special Message</button>
+    <button onclick="playMusic(); surprise()">🎁 Purple Surprise</button>
+    <button onclick="playMusic(); specialMessage()">💌 Special Message</button>
 
-    <div class="note">(music na chale toh kidhar bhi touch karo)</div>
+    <div class="note">(tap any button to start music 🎶)</div>
   </div>
 
   <script>
@@ -146,9 +147,10 @@
       });
     }, 800);
 
-    document.body.addEventListener("click", () => {
-      document.getElementById("music").play();
-    }, { once: true });
+    function playMusic() {
+      const music = document.getElementById("music");
+      music.play();
+    }
 
     function calculateAge() {
       const dob = new Date(2009, 0, 18);
@@ -192,7 +194,6 @@ In every lifetime, I want you to stay my way.✨🎂`);
         "💖 RIDDHU 💖\n\n"+
         "Whenever you'll feel lonely (or craving for fight 😅), I am always there for you.\n"+
         "May be not in every special moment, but in your toughest ones, always.\n\n"+
-        "🙌 I respect your boundaries (vaise toh tum limitless ho) I am never gonna put any restrictions on you the only thing is I that I feel little jealous or protective cuz your my one of the favourite person 🥰.\n\n"+
         "Special sorry for those moments when I hurt you unintentionally 💔\n\n"+
         "You are very special to me.\n"+
         "May your life always be filled with smiles,\n"+
